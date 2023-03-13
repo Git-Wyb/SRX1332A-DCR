@@ -14,7 +14,7 @@
 #define CONST_COEFF  1048576  //常数2^20
 #define VCO_LowerLimit_FREQ 400000  //400kHz
 
-void RF_ML7345_Init(u8* freq,u8 sync,u8 rx_len);
+void RF_ML7345_Init(u8* freq,u8 sync1,u8 sync0,u8 rx_len);
 void Tx_Data_Test(u8 mode);
 void ML7345_MeasurBER_Init(void);
 void RF_ML7345_TEST(void);

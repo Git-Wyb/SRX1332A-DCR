@@ -62,7 +62,7 @@ void main(void)
     ClearWDT();        // Service the WDT
     SPI_Config_Init();
     PROFILE_CH_FREQ_32bit_200002EC = 426075000;
-    RF_ML7345_Init(Fre_426_075,0x55,12);
+    RF_ML7345_Init(Fre_426_075,0x54,0x56,12);
     UART1_INIT();      // UART1 for PC Software
     _EI();             // 允许中断
     TIME_power_led=500;

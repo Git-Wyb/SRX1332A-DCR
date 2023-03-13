@@ -44,8 +44,8 @@ u8 ML7345_SetAndGet_State(RF_StatusSet_ENUM sta)
             {
                 ML7345_Frequency_Calcul(PROFILE_CH_FREQ_32bit_200002EC,Freq_SetBuff);
                 ClearWDT();
-                if(PROFILE_CH_FREQ_32bit_200002EC < 429000000)  RF_ML7345_Init(Freq_SetBuff,0x55,12);
-                else    RF_ML7345_Init(Freq_SetBuff,0x55,28);
+                if(PROFILE_CH_FREQ_32bit_200002EC < 429000000)  RF_ML7345_Init(Freq_SetBuff,0x54,0x56,12);
+                else    RF_ML7345_Init(Freq_SetBuff,0x54,0x56,28);
                 ClearWDT();
                 ML7345_Write_Reg(ADDR_RF_STATUS,sta);
                 WaitStatus_Complete();
@@ -344,8 +344,9 @@ void ML7345_Frequency_Set(u8 *freq,u8 radio_type)
     ML7345_Write_Reg(ADDR_VCO_CAL_MIN_FL,freq[7]);
 
     ML7345_Write_Reg(0x00,0x22);    /* Bank1 Set */
-    ML7345_Write_Reg(0x25,0x08);    /* SyncWord length setting */
-    ML7345_Write_Reg(0x2a,0x55);
+    //ML7345_Write_Reg(0x25,0x10);    /* SyncWord length setting */
+    ML7345_Write_Reg(0x29,0x54);
+    ML7345_Write_Reg(0x2a,0x56);
 
     if(radio_type == 1) ML7345_DataRate_Set_1_2k();
     else if(radio_type == 2)  ML7345_DataRate_Set_4_8k();
@@ -375,7 +376,7 @@ void ML7345_TRX_Int_Config(u8 GpioCtrlAddr,RF_TRX_ENUM Intnum,u8 Inten)
         ML7345_Write_Reg(GpioCtrlAddr,GPIO_INTOUTPUT_ENABLE);    /* GPIO 中断输出(SINTN) */
 
         if(Intnum == RF_TxDone_Int)  ML7345_Write_Reg(ADDR_INT_EN_GRP3,0x01);    /* 使能中断事件16,发送完成中断 */
-        else if(Intnum == RF_RxDone_Int) ML7345_Write_Reg(ADDR_INT_EN_GRP2,0x21);/* 0x21:使能中断事件8/13,接收完成中断/同步字检测中断;0x01:使能中断事件8,接收完成中断 */
+        else if(Intnum == RF_RxDone_Int) ML7345_Write_Reg(ADDR_INT_EN_GRP2,0x01);/* 0x21:使能中断事件8/13,接收完成中断/同步字检测中断;0x01:使能中断事件8,接收完成中断 */
     }
     else
     {
