@@ -737,6 +737,8 @@ void ML7345_TRX_Del(void)
         if(TIMER18ms < 50) TIMER18ms = 50;
         Flag_RxDone = 1;
         ML7345_Write_Reg(ADDR_INT_SOURCE_GRP2,0x00); //清接收完成标志
+        if(Flag_TX_ID_load == 0)    ML7345_Write_Reg(0x7e,12);  //接收数据长度设置
+        else ML7345_Write_Reg(0x7e,24);
         FG_Receiver_LED_RX = 1;
         TIMER300ms = 600;
     }
