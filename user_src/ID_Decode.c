@@ -150,7 +150,7 @@ void ID_Decode_IDCheck(void)
                                     if (FG_First_auto == 0)
                                     {
                                         FG_First_auto = 1;
-                                        TIMER1s = 3000; //2500
+                                        TIMER1s = 4100; //2500
                                     }
                                 }
 		                    }
@@ -668,11 +668,21 @@ void ID_Decode_OUT(void)
                 TIMER250ms_STOP = 0;
                 Receiver_OUT_VENT = FG_NOT_allow_out;
                 Receiver_OUT_CLOSE = FG_NOT_allow_out;
-                if (TIMER1s > 2000)
+                if (TIMER1s > 3100)
                 {
                     Receiver_OUT_STOP = FG_allow_out;
                     Receiver_OUT_OPEN = FG_NOT_allow_out;
                 } //1830
+                else if (TIMER1s > 2100)
+                {
+                    Receiver_OUT_STOP = FG_NOT_allow_out;
+                    Receiver_OUT_OPEN = FG_NOT_allow_out;
+                }
+                else if (TIMER1s > 1100)
+                {
+                    Receiver_OUT_STOP = FG_NOT_allow_out;
+                    Receiver_OUT_OPEN = FG_allow_out;
+                }
                 else if (TIMER1s > 1000)
                 {
                     Receiver_OUT_STOP = FG_NOT_allow_out;
