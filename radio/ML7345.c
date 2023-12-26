@@ -63,6 +63,9 @@ Return: Null
 void RF_ML7345_Init(u8* freq,u8 sync,u8 rx_len)
 {
     ML7345_RESETN_SET();    /* Hardware Reset */
+    ML7345_Write_Reg(0x00,0x11);
+    ML7345_Write_Reg(0x53,0x00);
+    ML7345_Write_Reg(0x03,0xC3);
     while(1){
         if(ML7345_Read_Reg(0x0Du)&0x01u){   /* Wait Clock stabilization completion */
             break;

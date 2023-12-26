@@ -31,7 +31,7 @@ If Force_TRX_OFF is selected during TX or RX operation, RF is turned off immedia
 u8 ML7345_SetAndGet_State(RF_StatusSet_ENUM sta)
 {
     u8 status = 0;
-
+    ML7345_INT_GPIO2_CR2 = 0;
     ML7345_Write_Reg(ADDR_BANK_SEL,BANK0_SEL);  //set bank0
     status = ML7345_Read_Reg(ADDR_RF_STATUS) >> 4;
     if(status != sta)
@@ -53,6 +53,7 @@ u8 ML7345_SetAndGet_State(RF_StatusSet_ENUM sta)
             status = ML7345_Read_Reg(ADDR_RF_STATUS) >> 4;
         }
     }
+    ML7345_INT_GPIO2_CR2 = 1;
     return status;
 }
 
