@@ -2,7 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-Checksum=876989444
+Checksum=823606114
 =======
 Checksum=-9081019
 >>>>>>> EGA-5.3T
@@ -76,15 +76,16 @@ Fmt2=uni_i-ui	4	0
 [array_types]
 Fmt0=u32_t[6]	4	0
 Fmt1=u32_t[7]	4	0
-Fmt2=u8_t[2]	4	0
-Fmt3=u8_t[3]	4	0
-Fmt4=unsigned char[3]	4	0
-Fmt5=unsigned char[41]	4	0
-Fmt6=unsigned char[42]	5	0
-Fmt7=unsigned char[4]	4	0
-Fmt8=unsigned char[5]	4	0
-Fmt9=unsigned char[91]	4	0
-Fmt10=unsigned char[9]	4	0
+Fmt2=u8_t[128]	4	0
+Fmt3=u8_t[2]	4	0
+Fmt4=u8_t[3]	4	0
+Fmt5=unsigned char[3]	4	0
+Fmt6=unsigned char[41]	4	0
+Fmt7=unsigned char[42]	5	0
+Fmt8=unsigned char[4]	4	0
+Fmt9=unsigned char[5]	4	0
+Fmt10=unsigned char[91]	4	0
+Fmt11=unsigned char[9]	4	0
 [watch_formats]
 Fmt0={W}0:COUNT_Receiver_Login	3	0
 Fmt1={W}0:RAM_rssi_AVG	3	0
@@ -105,10 +106,18 @@ Fmt15={W}42:Tx_Rx_mode	4	0
 Fmt16={W}42:UartCount	3	0
 Fmt17={W}42:UartLen	4	0
 Fmt18={W}42:cache	4	0
+Fmt19={W}42:read_reg	4	0
+Fmt20={W}42:read_reg05	4	0
+Fmt21={W}42:read_reg06	4	0
+Fmt22={W}42:read_reg07	4	0
+Fmt23={W}42:read_reg08	4	0
+Fmt24={W}42:read_reg09	4	0
 [DataSample]
 LogEnabled=0
 GraphEnabled=0
 ShowTimeLog=1
+[Breakpoints]
+Count=0
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
@@ -116,8 +125,6 @@ Category=_ 0
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ ""
-[Breakpoints]
-Count=0
 [Aliases]
 A0=_ "" ""
 A1=_ "D:\MyCloud\Working\Windowshade\Windowshade7030\user_src\ADF7030_1.c" "F:\Source Code\bunka-s\Bunka STM8L151G6 RX_ADF7030 Source CRX1831DC\Windowshade7030\user_src\ADF7030_1.c"

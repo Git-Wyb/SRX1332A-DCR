@@ -163,7 +163,7 @@ void ID_Decode_IDCheck(void)
                                 TIME_auto_close = 0;
 		                        FG_auto_open_time = 0;
 		                        if (FG_auto_manual_mode == 1)      //Manual_override_TIMER=13500;   //2�?0秒自动无�?
-		                            Manual_override_TIMER = 25850;//27200;//5 Minutes。24480; //4�?0秒自动无�?
+		                            Manual_override_TIMER = 27200;//5 Minutes。24480; //4�?0秒自动无�?
 		                        if ((DATA_Packet_Control & 0x14) == 0x14)
 		                        {
 		                            if (TIMER1s == 0)
@@ -838,7 +838,7 @@ void ID_Decode_OUT(void)
             FG_auto_out = 0;
             TIME_auto_close = 270;
             Receiver_LED_OUT = 1;
-            TIME_auto_useful = 35100; //35100*10ms=(5min*60+90s)*90
+            TIME_auto_useful = 35550;//35100; //35100*10ms=(5min*60+90s)*90
         } //300
         if (TIME_auto_close)
         {
