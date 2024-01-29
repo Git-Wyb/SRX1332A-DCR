@@ -64,15 +64,14 @@ void RF_ML7345_Init(u8* freq,u8 sync,u8 rx_len)
 {
     ML7345_RESETN_SET();    /* Hardware Reset */
     ML7345_Write_Reg(0x00,0x11);
+    ML7345_Write_Reg(0x03,0xC3); /* TCXO_EN */
     ML7345_Write_Reg(0x53,0x00);
-    ML7345_Write_Reg(0x03,0xC3);
     while(1){
         if(ML7345_Read_Reg(0x0Du)&0x01u){   /* Wait Clock stabilization completion */
             break;
         }
     }
     ML7345_Write_Reg(0x00,0x11);    /* Bank0 Set */
-    ML7345_Write_Reg(0x53,0x00);
     ML7345_Write_Reg(0x02,0x9f);    /* Clk Enable */
     ML7345_Write_Reg(0x04,0x03);    /* MSB first,Format D (non Wireless M-Bus, general purpose format) */
     ML7345_Write_Reg(0x05,0x10);    /* CRC Disable,Length field 1-byte mode */
@@ -637,7 +636,6 @@ void ML7345d_Change_Channel(void)
         PROFILE_CH_FREQ_32bit_200002EC = 426075000;
         Radio_Date_Type=1;
         Channels=1;
-        ML7345_Frequency_Set(Fre_426_075,Radio_Date_Type);
     }
     else
     {
@@ -691,8 +689,8 @@ void ML7345D_Freq_Scanning(void)
             else if(PROFILE_CH_FREQ_32bit_200002EC == 429350000) RF_ML7345_Init(Fre_429_350,0x55,28);
             else if(PROFILE_CH_FREQ_32bit_200002EC == 429550000) RF_ML7345_Init(Fre_429_550,0x55,28);
             ML7345_GPIO2RxDoneInt_Enable();
+            ML7345_SetAndGet_State(RX_ON);
         }
-        ML7345_SetAndGet_State(RX_ON);
         CG2214M6_USE_R;
 
         if(Radio_Date_Type==1)

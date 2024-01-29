@@ -2,7 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-Checksum=823606114
+Checksum=-1219976426
 =======
 Checksum=-9081019
 >>>>>>> EGA-5.3T
@@ -112,12 +112,16 @@ Fmt21={W}42:read_reg06	4	0
 Fmt22={W}42:read_reg07	4	0
 Fmt23={W}42:read_reg08	4	0
 Fmt24={W}42:read_reg09	4	0
+Fmt25={W}42:rf_offset	4	0
 [DataSample]
 LogEnabled=0
 GraphEnabled=0
 ShowTimeLog=1
 [Breakpoints]
-Count=0
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\radio\ML7345.c}.216.5" 1 0 0 0 "" 0 ""
+Bp1=_ "STD_CODE" "{$PROJ_DIR$\radio\ML7345.c}.218.5" 1 0 0 0 "" 0 ""
+Bp2=_ "STD_CODE" "{$PROJ_DIR$\radio\ML7345.c}.217.5" 1 0 0 0 "" 0 ""
+Count=3
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
