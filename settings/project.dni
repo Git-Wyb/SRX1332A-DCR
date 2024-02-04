@@ -2,7 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-Checksum=-1219976426
+Checksum=391542901
 =======
 Checksum=-9081019
 >>>>>>> EGA-5.3T
@@ -113,15 +113,12 @@ Fmt22={W}42:read_reg07	4	0
 Fmt23={W}42:read_reg08	4	0
 Fmt24={W}42:read_reg09	4	0
 Fmt25={W}42:rf_offset	4	0
+Fmt26={W}42:xaddr	4	0
+Fmt27={W}42:xdat	4	0
 [DataSample]
 LogEnabled=0
 GraphEnabled=0
 ShowTimeLog=1
-[Breakpoints]
-Bp0=_ "STD_CODE" "{$PROJ_DIR$\radio\ML7345.c}.216.5" 1 0 0 0 "" 0 ""
-Bp1=_ "STD_CODE" "{$PROJ_DIR$\radio\ML7345.c}.218.5" 1 0 0 0 "" 0 ""
-Bp2=_ "STD_CODE" "{$PROJ_DIR$\radio\ML7345.c}.217.5" 1 0 0 0 "" 0 ""
-Count=3
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
@@ -129,6 +126,8 @@ Category=_ 0
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ ""
+[Breakpoints]
+Count=0
 [Aliases]
 A0=_ "" ""
 A1=_ "D:\MyCloud\Working\Windowshade\Windowshade7030\user_src\ADF7030_1.c" "F:\Source Code\bunka-s\Bunka STM8L151G6 RX_ADF7030 Source CRX1831DC\Windowshade7030\user_src\ADF7030_1.c"

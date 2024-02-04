@@ -684,6 +684,7 @@ void ML7345D_Freq_Scanning(void)
         ML7345d_Change_Channel();
         if(Time_rf_init == 0)
         {
+            ClearWDT();
             Time_rf_init = 1000;
             if(PROFILE_CH_FREQ_32bit_200002EC == 426075000) RF_ML7345_Init(Fre_426_075,0x55,12);
             else if(PROFILE_CH_FREQ_32bit_200002EC == 429350000) RF_ML7345_Init(Fre_429_350,0x55,28);

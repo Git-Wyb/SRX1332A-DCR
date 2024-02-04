@@ -283,9 +283,11 @@ Return: Null
 */
 void ML7345_RESETN_SET(void)
 {
+    ML7345_INT_GPIO2_CR2 = 0;
     ML7345_RESETN = 0;
     system_delay(5);
     ML7345_RESETN = 1;
+    ML7345_INT_GPIO2_CR2 = 1;
 }
 
 /*
